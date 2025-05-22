@@ -1,0 +1,82 @@
+Main task: Explore diff. document vectorization techniques and their impact on classification accuracy. (Integrating Explainable AI techniques for interpretability.)
+
+Thanks for the detailed information. Based on the project description and the first deadline, your team needs to submit a one-page (or less) PDF outlining:
+
+1. **Selected Topic/Use Case**  
+2. **High-level ML pipeline steps**  
+3. **Mention of APIs/ML tools you'll use**
+
+---
+
+Here's a **concise draft for your initial one-page proposal PDF**:
+
+---
+
+**Advanced Topics in Machine Learning – Initial Project Proposal**
+
+**Team Name:** [Insert Team Name]  
+**Team Members:** [Names of 3–5 students]  
+**Selected Use Case:** **Use Case 1 – Few-shot and Zero-shot Learning with AGNews Dataset**
+
+---
+
+### Project Overview
+
+Our project aims to explore how different document vectorization techniques (TF-IDF, Doc2Vec, and LLM-generated summaries) impact classification performance, particularly in low-resource learning settings. We will also evaluate and compare explanation methods from both classical XAI tools and local LLM outputs.
+
+---
+
+### Datasets
+
+1. **Mandatory**: Twenty Newsgroups – for benchmarking vectorization methods.  
+2. **Use Case 1**: AGNews – for few-shot/zero-shot classification.
+
+---
+
+### High-Level ML Pipeline
+
+1. **Data Preprocessing**
+   - Clean and tokenize documents.
+   - Generate 3 representations per document:
+     - TF-IDF vectors (via `scikit-learn`)
+     - Doc2Vec embeddings (via `gensim`)
+     - LLM summaries (Gemini 3B via Ollama → embedded using `Sentence-BERT`)
+
+2. **Model Training and Classification**
+   - Train and test three classifiers:
+     - SVM (Scikit-learn SVC)
+     - Neural Networks (MLPClassifier)
+     - Decision Trees (Random Forest / XGBoost)
+
+3. **Evaluation**
+   - Use metrics: Accuracy, Precision, Recall, F1-score.
+   - Compare performance across document representations and datasets.
+
+4. **Explainability (XAI)**
+   - Apply LIME and SHAP for classifier interpretation.
+   - Query Gemini 3B (locally) for natural language reasoning.
+   - Compare and contrast explanations from XAI vs. LLM.
+
+5. **LLM Setup**
+   - Use **Ollama** to run **Gemini 3B (1B or 4B)** on local machines (CPU-only).
+   - Interact via API calls (e.g., Python `requests` or `ollama-python` SDK).
+
+---
+
+### Tools and Frameworks
+
+- **Python Libraries**: scikit-learn, gensim, sentence-transformers, SHAP, LIME, pandas  
+- **LLM Framework**: Ollama (Gemini 3B)  
+- **XAI**: SHAP, LIME + natural language via Gemini 3B  
+- **Vectorization**: TF-IDF (sklearn), Doc2Vec (gensim), Sentence-BERT (huggingface)
+
+---
+
+### Assumptions
+
+- Gemini 3B will be successfully set up using Ollama on local machines without GPU.
+- Summary vectors will use a fixed-length format via Sentence-BERT for consistency.
+
+---
+
+Let me know if you'd like me to format this into a PDF for submission or if you want a version tailored to Use Case 2.
